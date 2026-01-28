@@ -1,0 +1,24 @@
+
+from typing import List,Dict
+filepath=r"C:\Users\lenovo\Desktop\PYPROJECT\expense_analyzer\data\expenses.csv"
+def load_expenses(filepath:str):
+    with open (filepath,"r") as file:
+        file_content=file.read()
+        cleaned_content=file_content.strip()
+        line=cleaned_content.split("\n")
+        header_line=line[0]
+        header=header_line.split(",")
+        expense=[]
+        for row in line[1:]:
+            values=row.split(",")
+
+            expenses={}
+            for index in range(len(header)):
+                key = header[index]
+                value = values[index]
+                expenses[key]=value
+            expense.append(expenses)
+        return expense
+result=load_expenses(filepath)
+print(result)
+
