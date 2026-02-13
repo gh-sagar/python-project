@@ -12,7 +12,7 @@ def print_expenses_table(expenses):
 
 # Load and clean data ONCE
 expenses = clean_expenses(
-    load_expenses(r"C:\Users\lenovo\Desktop\PYPROJECT\expense_analyzer\data\expenses.csv")
+    load_expenses(r"/home/mrrobot/Desktop/PYTHON-PROJECT/expense_analyzer/data/expenses.csv")
 )
 
 print("\nTOTAL SPENT")

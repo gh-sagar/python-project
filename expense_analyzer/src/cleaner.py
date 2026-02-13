@@ -11,7 +11,7 @@ def normalize_expense(expense_dict: dict) -> dict:
 def clean_expenses(expenses: list) -> list:
     return list(map(normalize_expense, expenses))
 
-path=r"C:\Users\lenovo\Desktop\PYPROJECT\expense_analyzer\data\expenses.csv"
+path=r"/home/mrrobot/Desktop/PYTHON-PROJECT/expense_analyzer/data/expenses.csv"
 raw_expenses = load_expenses(path)
 cleaned_expenses = clean_expenses(raw_expenses)
 if __name__ == "__main__":
