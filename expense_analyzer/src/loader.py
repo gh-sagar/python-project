@@ -1,5 +1,5 @@
 from typing import List, Dict
-path=r"/home/mrrobot/Desktop/PYTHON-PROJECT/expense_analyzer/data/expenses.csv"
+path=r"expense_analyzer/data/expenses.csv"
 
 def load_expenses(path: str) -> List[Dict[str, str]]:
     # 1. Open the file in read mode
