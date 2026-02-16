@@ -7,13 +7,12 @@ def print_expenses_table(expenses):
     print(f"{'Date':<12} {'Category':<15} {'Amount':>10}")
     print("-" * 40)
     for e in expenses:
-        print(f"{e['date']:<12} {e['category']:<15} {e['amount']:>10.2f}")
+        print(f"{e['date']:<12} {e['category']:<15} {float(e['amount']):>10.2f}")
 
 
 # Load and clean data ONCE
-expenses = clean_expenses(
-    load_expenses(r"expense_analyzer/data/expenses.csv")
-)
+path = "expense_analyzer/data/expenses.csv"  # Relative path for Docker
+expenses = clean_expenses(load_expenses(path))
 
 print("\nTOTAL SPENT")
 print(total_spent(expenses))
