@@ -1,8 +1,8 @@
-name: Python CI Pipeline
+name: expense_analyzer CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -17,6 +17,6 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Check Python Syntax
+      - name: Check Syntax in expense_analyzer Folder
         run: |
-          python -m compileall .
+          python -m compileall expense_analyzer
