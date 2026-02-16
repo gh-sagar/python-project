@@ -32,8 +32,8 @@ jobs:
 
       # Step 5: Tag image for DockerHub
       - name: Tag Docker image
-        run: docker tag expense_analyzer ${{ secrets.DOCKER_USERNAME }}/expense_analyzer:latest
+        run: docker tag expense_analyzer ${{ secrets.dhsagarc}}/expense_analyzer:python
 
       # Step 6: Push Docker image to DockerHub
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/expense_analyzer:latest
+        run: docker push ${{ secrets.dhsagarc }}/expense_analyzer:python
