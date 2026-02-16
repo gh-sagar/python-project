@@ -1,18 +1,19 @@
+# expense_analyzer/src/main.py
 from loader import load_expenses
 from cleaner import clean_expenses
 from analytics import total_spent, filter_by_category, group_by_category
 
+# Relative path from src/ folder
+path = "../data/expenses.csv"
+
+# Load and clean data
+expenses = clean_expenses(load_expenses(path))
 
 def print_expenses_table(expenses):
     print(f"{'Date':<12} {'Category':<15} {'Amount':>10}")
     print("-" * 40)
     for e in expenses:
         print(f"{e['date']:<12} {e['category']:<15} {float(e['amount']):>10.2f}")
-
-
-# Load and clean data ONCE
-path = "expense_analyzer/data/expenses.csv"  # Relative path for Docker
-expenses = clean_expenses(load_expenses(path))
 
 print("\nTOTAL SPENT")
 print(total_spent(expenses))

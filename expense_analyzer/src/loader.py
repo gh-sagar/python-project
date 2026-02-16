@@ -1,20 +1,23 @@
+# expense_analyzer/src/loader.py
 from typing import List, Dict
 import csv
+import os
 
 def load_expenses(path: str) -> List[Dict[str, str]]:
-    """Reads a CSV file and returns a list of dictionaries."""
+    """Load CSV file as a list of dictionaries."""
+    
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"CSV file not found at {path}")
+    
     expenses = []
-    
-    # Open the CSV safely
     with open(path, newline='') as file:
-        reader = csv.DictReader(file)  # Automatically uses header row
+        reader = csv.DictReader(file)
         for row in reader:
-            expenses.append(dict(row))  # Convert OrderedDict to normal dict
-    
+            expenses.append(dict(row))
     return expenses
 
 # Optional: test loader directly
 if __name__ == "__main__":
-    path = "expense_analyzer/data/expenses.csv"  # Relative path
-    result = load_expenses(path)
-    print(result)
+    # Adjust relative path if running from src folder
+    path = "../data/expenses.csv"
+    print(load_expenses(path))
