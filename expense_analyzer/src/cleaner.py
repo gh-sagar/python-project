@@ -13,7 +13,7 @@ def clean_expenses(expenses: list) -> list:
 
 # Test directly
 if __name__ == "__main__":
-    path = "../data/expenses.csv"
+    path = "../src/expenses.csv"
     raw_expenses = load_expenses(path)
     cleaned_expenses = clean_expenses(raw_expenses)
     print(cleaned_expenses)

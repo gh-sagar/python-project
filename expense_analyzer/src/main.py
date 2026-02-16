@@ -4,7 +4,7 @@ from cleaner import clean_expenses
 from analytics import total_spent, filter_by_category, group_by_category
 
 # Relative path from src/ folder
-path = "../data/expenses.csv"
+path = "../src/expenses.csv"
 
 # Load and clean data
 expenses = clean_expenses(load_expenses(path))

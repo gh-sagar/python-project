@@ -19,5 +19,5 @@ def load_expenses(path: str) -> List[Dict[str, str]]:
 # Optional: test loader directly
 if __name__ == "__main__":
     # Adjust relative path if running from src folder
-    path = "../data/expenses.csv"
+    path = "../src/expenses.csv"
     print(load_expenses(path))
