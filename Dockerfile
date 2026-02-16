@@ -8,4 +8,4 @@ WORKDIR /app
 COPY . .
 
 # Command to run your CLI app
-CMD ["python", "expense_analyzer/main.py"]
+CMD ["python", "expense_analyzer/data/expenses.csv"]
